@@ -17,7 +17,7 @@ router.get('/:id', (req, res, _next) => {
                 return;
             }
             let postDefinitions = req.app.get("posts");
-            let fullPost = Object.assign(postDefinitions[postDefinitions.length - postId], {content: data});
+            let fullPost = {...postDefinitions[postDefinitions.length - postId], ...{content: data}};
             cache[postId] = fullPost;
             res.json(fullPost);
         });
