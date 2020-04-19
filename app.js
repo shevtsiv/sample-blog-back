@@ -5,6 +5,7 @@ var logger = require('morgan');
 let fs = require('fs');
 
 var postsRouter = require('./routes/posts');
+var metadataRouter = require('./routes/meta-pages');
 var app = express();
 
 app.use((req, res, next) => {
@@ -21,7 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/posts', postsRouter);
-
+app.use(metadataRouter);
 
 
 module.exports = app;

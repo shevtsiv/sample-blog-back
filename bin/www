@@ -90,6 +90,7 @@ function onListening() {
     debug('Listening on ' + bind);
 
     loadPostMetadata();
+    preloadSiteMetadata();
 }
 
 function loadPostMetadata() {
@@ -102,4 +103,11 @@ function loadPostMetadata() {
         }).sort(descendingComparator);
     app.set("posts", posts);
     app.set("cache", []);
+}
+
+function preloadSiteMetadata() {
+    let aboutPageContent = fs.readFileSync("./public/meta/about.md", 'UTF-8');
+    app.set("aboutMetadata", {content: aboutPageContent});
+    let donatePageContent = fs.readFileSync("./public/meta/donate.md", 'UTF-8');
+    app.set("donateMetadata", {content: donatePageContent});
 }
