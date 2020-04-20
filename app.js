@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-let fs = require('fs');
+require('dotenv').config()
 
 var postsRouter = require('./routes/posts');
 var metadataRouter = require('./routes/meta-pages');
