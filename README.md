@@ -20,9 +20,9 @@ content, so the blog post unit is broken down into 2 parts:
 Post's metadata looks like:
 ```json
 {
-  "id": <unique id of the blog post>,
-  "title": <blog post title>,
-  "imageURL": <url to the blog post's image>
+  "id": "<unique id of the blog post>",
+  "title": "<blog post title>",
+  "imageURL": "<url to the blog post's image>"
 }
 ```
 When the client enters the main pages it is served with post definitions only for the performance and network efficient
